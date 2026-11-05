@@ -1,0 +1,48 @@
+:root{--crema:#FFF8EC;--lavanda:#E6DDFB;--celeste:#D6ECFA;--rosa:#FADADD;--amarillo:#FFE9A8;--tinta:#3B3560;--suave:#6F6890;--fondo:var(--crema);--tarjeta:#fff;--sombra:0 6px 18px rgba(120,100,170,.16)}
+body.noche{--fondo:#1E1B33;--tarjeta:#2B2748;--tinta:#F3E9C9;--suave:#B7AFD6;--lavanda:#3A3560;--sombra:0 6px 18px rgba(0,0,0,.35)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fondo);color:var(--tinta);font-family:ui-rounded,"Nunito","Segoe UI",system-ui,sans-serif;line-height:1.5;transition:background .4s,color .4s}
+[hidden]{display:none!important}
+button,input{font:inherit;color:inherit}
+.cabecera{text-align:center;padding:calc(28px + env(safe-area-inset-top)) 20px 22px;background:linear-gradient(160deg,var(--lavanda),var(--celeste));border-radius:0 0 40px 40px}
+body.noche .cabecera{background:linear-gradient(160deg,#2B2748,#1E1B33)}
+.luna{display:block;font-size:2.4rem;animation:mece 5s ease-in-out infinite}
+@keyframes mece{50%{transform:translateY(-6px) rotate(-8deg)}}
+h1{margin:4px 0;font-size:1.9rem;letter-spacing:.3px}
+.bienvenida{margin:6px auto 0;max-width:22em;color:var(--suave);font-size:1.05rem}
+.contenedor{max-width:960px;margin:0 auto;padding:18px 16px 40px}
+h2{font-size:1.2rem;margin:22px 4px 10px}
+#buscador{width:100%;min-height:52px;padding:0 20px;border:2px solid var(--lavanda);border-radius:26px;background:var(--tarjeta);box-shadow:var(--sombra)}
+.filtros{display:flex;gap:8px;overflow-x:auto;padding:14px 2px 6px;scrollbar-width:none}
+.chip{flex:none;min-height:46px;padding:0 16px;border:2px solid transparent;border-radius:23px;background:var(--tarjeta);box-shadow:var(--sombra);cursor:pointer;white-space:nowrap}
+.chip[aria-pressed=true]{background:var(--amarillo);border-color:#F2C94C;color:#3B3560;font-weight:700}
+.destacados{display:flex;gap:14px;overflow-x:auto;padding:4px 2px 14px;scroll-snap-type:x mandatory}
+.destacados .tarjeta{flex:0 0 76%;max-width:300px;scroll-snap-align:start}
+.cuadricula{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.tarjeta{display:flex;flex-direction:column;background:var(--tarjeta);border-radius:26px;overflow:hidden;box-shadow:var(--sombra)}
+.cubierta{height:130px;display:grid;place-items:center;font-size:4rem;position:relative}
+.cubierta .corazon{position:absolute;top:10px;right:14px;font-size:1.3rem}
+.cuerpo{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.cuerpo h3{margin:0;font-size:1.1rem}
+.cuerpo p{margin:0;color:var(--suave);font-size:.95rem;flex:1}
+.meta{font-size:.85rem;color:var(--suave)}
+.btn{min-height:48px;padding:0 20px;border:0;border-radius:24px;background:var(--lavanda);cursor:pointer;font-weight:700}
+.btn.leer{background:var(--rosa);color:#3B3560;margin-top:6px}
+.btn:active,.chip:active{transform:scale(.96)}
+.btn:focus-visible,.chip:focus-visible,#buscador:focus-visible{outline:3px solid #8E7CC3;outline-offset:2px}
+.vacio{text-align:center;color:var(--suave);padding:30px 10px}
+.progreso{position:fixed;top:0;left:0;right:0;height:6px;z-index:5}
+#barra{height:100%;width:0;background:linear-gradient(90deg,#F7B6C2,#FFD66B);border-radius:0 3px 3px 0;transition:width .15s}
+.barra-lector{position:sticky;top:0;z-index:4;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:calc(12px + env(safe-area-inset-top)) 14px 10px;background:var(--fondo)}
+.controles{display:flex;gap:6px}
+.btn.redondo{width:48px;padding:0}
+.historia{max-width:640px;margin:0 auto;padding:0 22px 70px}
+.portada{height:200px;border-radius:30px;display:grid;place-items:center;font-size:6rem;box-shadow:var(--sombra);margin-bottom:8px;animation:flota 6s ease-in-out infinite}
+@keyframes flota{50%{transform:translateY(-5px)}}
+.historia h1{text-align:center;margin:18px 0}
+#lector-texto{font-family:Georgia,"Times New Roman",serif;font-size:var(--letra,1.25rem);line-height:1.95}
+#lector-texto p{margin:0 0 1.1em}
+.fin{text-align:center;font-size:1.3rem;margin-top:30px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media(min-width:700px){.destacados .tarjeta{flex-basis:300px}h1{font-size:2.4rem}}
