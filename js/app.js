@@ -1,6 +1,6 @@
 (() => {
 "use strict";
-const CATS=[{id:"todos",n:"🌈 Todos"},{id:"fav",n:"❤️ Favoritos"},{id:"animales",n:"🐻 Animales"},{id:"fantasia",n:"🧚 Fantasía y magia"},{id:"aventuras",n:"🌳 Aventuras"},{id:"dormir",n:"🌙 Cuentos para dormir"},{id:"amistad",n:"❤️ Amistad y emociones"},{id:"exploracion",n:"🚀 Exploración y descubrimientos"}];
+const CATS=[{id:"todos",n:"🌈 Todos"},{id:"fav",n:"❤️ Favoritos"},{id:"clasicos",n:"📚 Cuentos clásicos"},{id:"animales",n:"🐻 Animales"},{id:"fantasia",n:"🧚 Fantasía y magia"},{id:"aventuras",n:"🌳 Aventuras"},{id:"dormir",n:"🌙 Cuentos para dormir"},{id:"amistad",n:"❤️ Amistad y emociones"},{id:"exploracion",n:"🚀 Exploración y descubrimientos"}];
 const $=id=>document.getElementById(id);
 const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 let favs=store.get("cm_favs",[]),prefs=store.get("cm_prefs",{letra:1.25,noche:false}),cat="todos",q="",actual=null;
